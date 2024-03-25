@@ -1,3 +1,5 @@
+(defvar runemacs/default-font-size 180)
+
 (setq inhibit-startup-message t)
 
 (scroll-bar-mode -1)        ; Disable visible scrollbar
@@ -10,6 +12,7 @@
 ;; Disable the visible bell
 (setq visible-bell nil)
 
+(set-face-attribute 'default nil :height runemacs/default-font-size)
 
 (load-theme 'wombat)
 
