@@ -146,3 +146,16 @@
 (setq evil-insert-state-cursor '(bar "#00FF00")
       evil-visual-state-cursor '(box "#FF00FF")
       evil-normal-state-cursor '(box "#E2E8EF"))
+
+(use-package projectile
+  :diminish projectile-mode
+  :config (projectile-mode)
+  :custom ((projectile-completion-system 'ivy))
+  :bind-keymap
+  ("C-c p" . projectile-command-map)
+  :init
+  ;; NOTE: Set this to the folder where you keep your Git repos!
+  (when (file-directory-p "~/projects")
+    (setq projectile-project-search-path '("~/projects")))
+  (setq projectile-switch-project-action #'projectile-dired))
+
